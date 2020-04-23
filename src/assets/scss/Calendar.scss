@@ -1,0 +1,31 @@
+.calendar_body{
+    margin: 20px;
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    div.week_day{
+        border: 1px solid $ligth_blue;
+        background-color: skyblue;
+    }
+    div.day_sqr{
+        border: 1px solid $ligth_blue;
+    }
+    .column{
+        flex: 0 0 14.28%;
+        max-width: 14.28%;
+        height: 60px;
+        box-sizing: border-box;
+        padding: 3px;
+    }
+    .today{
+        display: flex;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        background-color: red;
+
+    }
+}

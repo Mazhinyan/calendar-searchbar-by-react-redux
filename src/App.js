@@ -1,17 +1,12 @@
 import React from 'react';
-import CheckDate from './helpers/CheckDate';
+import Calendar from './components/Calendar';
 
 function App() {
 	return (
-		<div className="App">
-			<header className="App-header">
-				s
-			</header>
-		</div>
+		<>
+			<Calendar />
+		</>
 	);
 }
 
 export default App;
-
-
-console.log(CheckDate());
