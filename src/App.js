@@ -1,10 +1,12 @@
 import React from 'react';
-import Calendar from './components/Calendar';
+import Header from './components/Header';
+import Home from './components/Home';
 
 function App() {
 	return (
 		<>
-			<Calendar />
+			<Header />
+			<Home />
 		</>
 	);
 }
