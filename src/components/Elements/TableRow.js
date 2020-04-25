@@ -9,10 +9,13 @@ const TableRow = ({
 	const dispath = useDispatch();
 	const isComplet = status === 'complete';
 	const remove = () => {
-		dispath(removeAction(columnID, rowIndex));
+		const ask = 'Are you shure remove this item';
+		if (window.confirm(ask)) { dispath(removeAction(columnID, rowIndex)) }
 	};
 	const markAsDone = () => {
-		dispath(doneAction(columnID, rowIndex));
+		const ask = 'Are you shure mark as done this item';
+
+		if (window.confirm(ask)) { dispath(doneAction(columnID, rowIndex)) }
 	};
 	return (
 		<tr>

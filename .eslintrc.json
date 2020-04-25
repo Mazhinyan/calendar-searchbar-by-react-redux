@@ -59,6 +59,7 @@
             }
         ],
         "no-tabs": 0,
-        "no-console": "off"
+        "no-console": "off",
+        "no-alert": "off",
     }
 }

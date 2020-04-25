@@ -27,6 +27,9 @@
                 div.event{
                     visibility: visible;
                 }
+                button.addEvent{
+                    visibility: visible;
+                }
             }
             div.event{
                 height: 90%;
@@ -37,6 +40,25 @@
                 right:  0;
                 top:0;
                 visibility: hidden;
+            }
+
+            button.addEvent{
+                height: 30px;
+                width: 30px;
+                cursor: pointer;
+                border-radius: 50%;
+                background-color: teal;
+                position: absolute;
+                color:white;
+                bottom: 2px;
+                right: 2px;
+                z-index: 2;
+                visibility: hidden;
+                border: none;
+                &:hover{
+                    background-color: greenyellow;
+                    border: 1px solid teal;
+                }
             }
         }
     }

@@ -7,6 +7,8 @@ const EventsContent = ({ data, isEvent, day }) => {
 		const ind = data.days.indexOf(day);
 		const statusIncomp = data.event[ind].data.reduce((prevVal, key) => (
 			key.status === 'incomplete' ? prevVal + 1 : prevVal), 0);
+
+
 		return (
 			<span>
 				{data.event[ind].data.length}
@@ -16,7 +18,6 @@ const EventsContent = ({ data, isEvent, day }) => {
 			</span>
 		);
 	}
-	return null;
 };
 
 
