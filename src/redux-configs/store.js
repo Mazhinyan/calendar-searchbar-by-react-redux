@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import { createLogger } from 'redux-logger';
-import storage from 'redux-persist/lib/storage';
+import storageSession from 'redux-persist/es/storage/session';
 import createSagaMiddleware from 'redux-saga';
 import { createBrowserHistory } from 'history';
 import rootReducer from './combinReducer';
@@ -14,7 +14,7 @@ const logger = createLogger();
 const persistConfig = {
 	key: 'root',
 	blacklist: ['router'],
-	storage,
+	storage: storageSession,
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer(history));

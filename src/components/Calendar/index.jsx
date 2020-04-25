@@ -15,7 +15,11 @@ const Calendar = () => {
 	return (
 		<section className="calendar_body">
 			<section title="calendar-title" className="title">
-				<h1 title="date">{`${MONTHS[date.month]} ${date.year}`}</h1>
+				<h1 title="date">
+					{MONTHS[date.month]}
+					{' '}
+					{date.year}
+				</h1>
 			</section>
 			<WeekDays />
 			<EmpytiDays />

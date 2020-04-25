@@ -1,0 +1,31 @@
+section.table_conten{
+    div.table_conten_header{
+        display: flex;
+        justify-content: space-around;
+        button.add_tem{
+            color:white;
+            background-color: $serchBG;
+            border: none;
+            height: 30px;
+            width: 100px;
+            border-radius: 5px;
+           
+        }
+    }
+    table.table_to_do{
+        width: 100%;
+        tr th, td{
+            border: 1px solid;          
+            button{
+                color:white;
+                background-color: $serchBG;
+                border: none;
+                height: 30px;
+                width: 100px;
+                border-radius: 5px; 
+                margin: auto;
+                display: inline-block;
+            }
+        }
+    }
+}

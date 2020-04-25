@@ -9,13 +9,16 @@ section.search_bar_content{
         background-color: white;
         border: none;
         padding: 0 3px;
+        &:focus{
+            outline: none;
+            border: none;
+        }
     }
     button{
         height: 60px;
         width: 60px;
         background-color: $ligth_blue;
         border: none;
-        cursor: pointer;
         transition: 0.2s ease;
         &:focus{
             outline: none;
