@@ -21,8 +21,28 @@ export default (state = initialState, {
 		return { days: [...days], event: [...event] };
 	}
 
-	case ADD_ITEM_ACTION:
+	case ADD_ITEM_ACTION: {
+		const { title, description, day } = item;
+		const { event, days } = state;
+		if (days.includes(day)) {
+			const index = days.indexOf(day);// find index
+			const id = event[index].data.length;// create id
+			event[index].data.push({
+				title, description, id, status: 'incomplete',
+			});// push itrm in container
+			return { days: [...days], event: [...event] };
+		}
+
+		days.push(day);
+		event.push({
+			id: day,
+			data: [{
+				title, description, id: 0, status: 'incomplete',
+			}],
+		});
 		return { ...state };
+	}
+
 	default:
 		return state;
 	}

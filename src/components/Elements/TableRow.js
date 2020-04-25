@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { doneAction, removeAction } from '../Calendar/redux';
 
 const TableRow = ({
-	title, despcription, status, columnID, rowIndex,
+	title, description, status, columnID, rowIndex,
 }) => {
 	const dispath = useDispatch();
 	const isComplet = status === 'complete';
@@ -18,7 +18,7 @@ const TableRow = ({
 		<tr>
 			<td>
 				<h3>{title}</h3>
-				<p>{despcription }</p>
+				<p>{description }</p>
 			</td>
 			<td>{status}</td>
 			<td>
@@ -39,7 +39,7 @@ export default TableRow;
 
 TableRow.propTypes = {
 	title: PropTypes.string.isRequired,
-	despcription: PropTypes.string.isRequired,
+	description: PropTypes.string.isRequired,
 	status: PropTypes.string.isRequired,
 	columnID: PropTypes.number.isRequired,
 	rowIndex: PropTypes.number.isRequired,

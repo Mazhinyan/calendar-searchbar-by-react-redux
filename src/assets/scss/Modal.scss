@@ -1,0 +1,43 @@
+aside{
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal_body{
+        width:60%;
+        height: 80vh;
+        background-color: white;
+        input,textarea{
+            display: block;
+            width: 80%;
+            margin:30px auto;
+            border: 2px solid $ligth_blue;
+        }
+        button{
+            border: none;
+            height: 30px;
+            width: 100px;
+            border-radius: 5px; 
+            margin-left:10%;
+            display: inline-block;
+            cursor: pointer;
+            &.submit{
+            background-color: $ligth_blue;
+            }
+            &.add{
+                background-color: yellow;  
+            }
+        }
+        p.err{
+            color: red;
+            text-align: center;
+        }
+    }
+}
