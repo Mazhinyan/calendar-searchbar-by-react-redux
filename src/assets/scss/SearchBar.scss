@@ -2,7 +2,7 @@ section.search_bar_content{
     height: 80px;
     background-color: $stblue;
     padding:0 5px;
-
+    position: relative;
     input{
         width: calc(100% - 70px);
         height: 60px;
@@ -27,5 +27,30 @@ section.search_bar_content{
             background-color: $stblue;
             color:white;
         }
+    }
+    div.result{
+        position: absolute;
+        top: 65px;
+        min-height: 60px;
+        left: 5px;
+        right: 5px;
+        z-index: 1;
+        background-color: white;
+        border:1px solid greenyellow;
+        button.close{
+            position: absolute;
+            right: 5px;
+            top:5px;
+            cursor: pointer;
+            z-index: 2;
+            transform: rotate(45deg);
+            color: white;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-color: rgba($color: $stblue, $alpha: 0.5);
+        }
+
+
     }
 }

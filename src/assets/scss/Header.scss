@@ -1,4 +1,10 @@
 header{
     height: 60px;
     background-color: $stblue;
+    nav{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 20px;
+    }
 }

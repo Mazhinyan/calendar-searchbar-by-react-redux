@@ -50,7 +50,11 @@ const Modal = () => {
 				<Portal>
 					<>
 						<div className="modal_body">
-							<h3>Add To Do Item</h3>
+							<h3>
+								Add To Do Item in
+								{' '}
+								{day}
+							</h3>
 							<form onSubmit={submit}>
 								<input placeholder="Title" data-rule="title" onInput={inputing} />
 								<textarea placeholder="Description" data-rule="description" onInput={inputing} />

@@ -23,6 +23,13 @@
         "jsx-a11y"
     ],
     "rules": {
+        //Unary operator ++ for forLoop
+        "no-plusplus": [
+            "error",
+            {
+                "allowForLoopAfterthoughts": true
+            }
+        ],
         // Indent with tabs
         "indent": [
             "error",
