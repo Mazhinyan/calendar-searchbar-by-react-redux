@@ -49,6 +49,9 @@ section.search_bar_content{
             width: 30px;
             border-radius: 50%;
             background-color: rgba($color: $stblue, $alpha: 0.5);
+            &:focus{
+                outline: none;
+            }
         }
 
 
