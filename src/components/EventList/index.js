@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { dataSelector } from '../../helpers';
+import { dataSelector, CheckDate, MONTHS } from '../../helpers';
 import { TableRow } from '../Elements';
 import { openModal } from '../Modal/redux';
 
@@ -20,6 +20,14 @@ const EventList = () => {
 	return (
 		<section className="table_conten">
 			<div className="table_conten_header">
+				<h4>
+					TO DO list in
+					{' '}
+					{MONTHS[CheckDate().month] }
+					{' '}
+					{id}
+				</h4>
+				{' '}
 				<button type="button" className="add_tem" onClick={modalOPen}>add item</button>
 			</div>
 			{index >= 0 ? (
@@ -49,6 +57,8 @@ const EventList = () => {
 			) : (
 				<span>
 					Oops: in
+					{' '}
+					{MONTHS[CheckDate().month] }
 					{' '}
 					{id}
 					{' '}
