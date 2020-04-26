@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Portal from '../Portal';
-import { modalSelector } from '../../helpers';
+import { modalSelector, MONTHS, CheckDate } from '../../helpers';
 import { addItemAction } from '../Calendar/redux';
 import { closeModal } from './redux';
 
@@ -51,10 +51,14 @@ const Modal = () => {
 					<>
 						<div className="modal_body">
 							<h3>
-								Add To Do Item in
+								Add new todo item in
 								{' '}
 								{day}
+								{' '}
+								{MONTHS[CheckDate().month]}
 							</h3>
+
+
 							<form onSubmit={submit}>
 								<input placeholder="Title" data-rule="title" onInput={inputing} />
 								<textarea placeholder="Description" data-rule="description" onInput={inputing} />

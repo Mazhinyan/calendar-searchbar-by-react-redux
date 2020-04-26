@@ -30,6 +30,12 @@
                 "allowForLoopAfterthoughts": true
             }
         ],
+        "no-underscore-dangle": [
+            "error",
+            {
+                "allowAfterThis": true
+            }
+        ],
         // Indent with tabs
         "indent": [
             "error",

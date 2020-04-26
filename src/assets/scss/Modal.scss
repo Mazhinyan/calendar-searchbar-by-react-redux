@@ -9,7 +9,9 @@ aside{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    h3{
+        text-align: center;
+    }
     .modal_body{
         width:60%;
         height: 80vh;

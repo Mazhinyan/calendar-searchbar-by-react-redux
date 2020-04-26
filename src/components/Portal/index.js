@@ -8,10 +8,10 @@ const Portal = ({ children }) => {
 	useEffect(() => {
 		portalRoot.appendChild(el);
 
-		return () => {
+		return () => { // clean up func , when WillUnmount phase
 			portalRoot.removeChild(el);
 		};
-	}, [el, portalRoot]);
+	}, [el, portalRoot]);// when 2 element is ready
 
 	return ReactDOM.createPortal(children, el);
 };
