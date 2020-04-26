@@ -68,7 +68,7 @@ const Modal = () => {
 								</section>
 
 							</form>
-							{err && <p>etgrvfdc</p>}
+							{err && <p>all inouts is required</p>}
 						</div>
 					</>
 				</Portal>
