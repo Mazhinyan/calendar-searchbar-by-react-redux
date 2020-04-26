@@ -11,7 +11,8 @@ const WeekDays = () => {
 			{
 				WEEK.map((key, index) => (
 					<div key={key} className="week_day column">
-						<span className={date.weekDay - 1 === index ? 'today' : ''}>{key}</span>
+						{/* week day 0 index is sunday, mondey start 1 ... */}
+						<span className={(!date.weekDay && index===6) ||( date.weekDay -1 === index)?'today' :"" }>{key}</span>
 					</div>
 				))
 			}

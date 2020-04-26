@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { doneAction, removeAction } from '../Calendar/redux';
@@ -8,15 +8,24 @@ const TableRow = ({
 }) => {
 	const dispath = useDispatch();
 	const isComplet = status === 'complete';
+	const [confirm, setConfirm] = useState([false, 0, '']);// [is comfitm, order, message]
+
+
+	const Confirmable = (boo, order) => {
+		const conf = [boo, order, order ? 'Are you shure mark as done this item ?' : 'Are you shure remove this item ?'];
+		setConfirm([...conf]);
+	};
+
 	const remove = () => {
-		const ask = 'Are you shure remove this item';
-		if (window.confirm(ask)) { dispath(removeAction(columnID, rowIndex)) }
+		dispath(removeAction(columnID, rowIndex));
+		setConfirm([false, 0, '']);
 	};
 	const markAsDone = () => {
-		const ask = 'Are you shure mark as done this item';
-
-		if (window.confirm(ask)) { dispath(doneAction(columnID, rowIndex)) }
+		dispath(doneAction(columnID, rowIndex));
+		setConfirm([false, 1, '']);
 	};
+
+
 	return (
 		<tr>
 			<td>
@@ -25,12 +34,42 @@ const TableRow = ({
 			</td>
 			<td>{status}</td>
 			<td>
-				<button type="button" onClick={remove}>
-					Remove
-				</button>
+				<div className="action_content">
+					{confirm[0]
+						? (
+							<>
+								<p>{confirm[2]}</p>
+								<button type="button" onClick={confirm[1] ? markAsDone : remove}>Yes</button>
+								<button type="button" onClick={() => Confirmable(false, 0)}>No</button>
+							</>
+						) : (
 
-				{!isComplet && <button type="button" onClick={markAsDone}>Mark as done</button>}
+							<>
+								{' '}
+								<button
+									type="button"
+									onClick={() => Confirmable(true, 0)}
+									disabled={confirm[0]}
+									style={{ cursor: !confirm[0] ? 'pointer' : 'not-allowed' }}
+								>
+									Remove
+								</button>
+								{!isComplet && (
+									<button
+										type="button"
+										onClick={() => Confirmable(true, 1)}
+										disabled={confirm[0]}
+										style={{ cursor: !confirm[0] ? 'pointer' : 'not-allowed' }}
+									>
+										Mark as done
+									</button>
+								)}
 
+							</>
+
+						)}
+
+				</div>
 			</td>
 		</tr>
 	);

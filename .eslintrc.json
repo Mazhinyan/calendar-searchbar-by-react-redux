@@ -58,8 +58,6 @@
                 ]
             }
         ],
-        "no-tabs": 0,
-        "no-console": "off",
-        "no-alert": "off",
+        "no-tabs": 0
     }
 }
